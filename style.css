@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #0f2027; /* Azul noche oscuro */
+    color: white;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* Estilos de la Portada */
+#portada {
+    height: 100vh; /* Ocupa toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+}
+
+.contenido-central {
+    text-align: center;
+    z-index: 10; /* Asegura que el texto esté sobre las flores */
+    background: rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #ff4d4d; /* Rojo Navidad */
+    text-shadow: 2px 2px 4px #000;
+}
+
+.boton-navidad{
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.5);
+    transform: scale(1.1);
+    background-color: #f1c40f;
+    filter: brightness(1.1);
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #d4af37; /* Dorado */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #f1c40f;
+}
+
+/* Animación de Flores */
+.flor {
+    position: absolute;
+    top: -50px;
+    color: #d32f2f; /* Rojo */
+    font-size: 24px;
+    opacity: 0.8;
+    animation: caer linear infinite;
+}
+
+@keyframes caer {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Estilos del Álbum */
+#album {
+    min-height: 100vh;
+    padding: 50px 20px;
+    background-color: #1d351d;
+    color: #fff;
+    display: none; /* Oculto al principio */
+    text-shadow: 2px, 2px, 4px, #000000;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    
+}
+
+.foto img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+    
+}
+
+.foto img:hover {
+    transform: scale(1.05);
+}
